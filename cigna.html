@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página con Menú y Secciones</title>
+    <link rel="stylesheet" href="Sec.css" />
+  </head>
+  <body>
+    <!-- Sidebar y overlay -->
+    <div id="sidebar">
+      <nav>
+        <h3 class="nav-title">Navegación</h3>
+        <ul class="nav-list">
+          <li><a href="#sec1">➤ Cigna for Brokers</a></li>
+          <li><a href="#sec2">➤ Cotizador</a></li>
+          <li><a href="#sec3">➤ Drive</a></li>
+          <li><a href="#sec4">➤ Sección 4</a></li>
+        </ul>
+
+        <hr />
+
+        <h3 class="nav-title">Enlaces rápidos</h3>
+        <ul class="nav-list">
+          <li><a href="inicio.html">Inicio</a></li>
+          <li><a href="obama.html">Obamacare</a></li>
+          <li><a href="#">Medicare</a></li>
+          <li><a href="#footer">📞 Contacto</a></li>
+          <li><a href="#footer">📄 Información</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="overlay"></div>
+
+    <!-- Header -->
+    <header>
+      <button id="menu-btn">&#9776;</button>
+      <img src="img/logo cigna-01.png" alt="Logo Cigna" class="logo-cigna" />
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+      <section id="sec1" class="sec1">
+        <h2>Cigna For Brokers</h2>
+        <img
+          class="img-sec"
+          src="img/5368eef8-32d0-42ff-8bbc-8d49441c3133.jpg"
+          alt="Cigna for Brokers"
+        />
+        <a
+          href="https://cignaforbrokers.com/public/login"
+          class="btn"
+          target="_blank"
+          >Cigna For Brokers</a
+        >
+      </section>
+
+      <section id="sec2">
+        <h2>Cotizador</h2>
+        <img src="img/cotizador.jpg" alt="Cotizador" />
+        <a
+          href="https://cignasupplemental.com/equotes"
+          class="btn"
+          target="_blank"
+          >Cotizador</a
+        >
+      </section>
+
+      <section id="sec3">
+        <h2>Drive Agente</h2>
+        <img src="img/drive-agentes.jpg" alt="Drive Agente" />
+        <a
+          href="https://drive.google.com/drive/folders/19FOTSFvvTtDXlZr2ZjpoZVot3kNgFBzm?usp=drive_link"
+          class="btn"
+          target="_blank"
+          >Drive Agente</a
+        >
+      </section>
+
+      <section id="sec4">
+        <h2>Sección 4</h2>
+        <img src="https://via.placeholder.com/800x400" alt="Sección 4" />
+        <a href="https://ejemplo4.com" class="btn" target="_blank"
+          >Ir a Sección 4</a
+        >
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+        <div>
+          <h3>Contacto</h3>
+          <p>Email: cignasoporteagentenci@gmail.com</p>
+          <p>Tel: +1 786 633 2546</p>
+        </div>
+        <div>
+          <h3>Redes Sociales</h3>
+          <p><a href="#">Facebook</a></p>
+          <p><a href="#">Twitter</a></p>
+          <p><a href="#">Instagram</a></p>
+        </div>
+        <div>
+          <h3>Información</h3>
+          <p>© 2025 NEW CONTRY INSURANCE</p>
+          <p>Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+    </script>
+  </body>
+</html>

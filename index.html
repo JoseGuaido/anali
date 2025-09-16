@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Soporte de Seguros</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylo.css" />
+  </head>
+  <body>
+    <!-- Encabezado -->
+    <header>
+      <div class="icon" onclick="toggleMenu()">&#9776;</div>
+      <div class="icon">&#128222;<a href="https://wa.link/x8k8dv"></a></div>
+    </header>
+
+    <!-- Menú de navegación -->
+    <nav id="menu">
+      <a href="inicio.html">Inicio</a>
+      <a href="cigna.html">Cigna</a>
+      <a href="obama.html">Obamacare</a>
+      <a href="#">Medicare</a>
+      <a href="#">Contacto</a>
+    </nav>
+
+    <!-- Sección de bienvenida -->
+    <section>
+      <div class="air air1"></div>
+      <div class="air air2"></div>
+      <div class="air air3"></div>
+      <div class="air air4"></div>
+
+      <div class="welcome">
+        <h1>¡Bienvenido a nuestra gran familia!</h1>
+        <h2>¡New Country Insurance!</h2>
+        <p>
+          Queridos AGENTES: Es un honor contar con ustedes en nuestra agencia:
+          un espacio donde el talento se potencia, las ideas se valoran y el
+          crecimiento es parte del camino.
+        </p>
+
+        <div class="button-group">
+          <button onclick="togglePopup('popup1')">
+            <a href="cigna.html" target="_blank">Cigna</a>
+          </button>
+          <button onclick="togglePopup('popup2')">
+            <a href="obama.html" target="_blank">Obamacare</a>
+          </button>
+          <button onclick="togglePopup('popup3')">
+            <a href="#">Medicare</a>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popups (si existen en tu CSS) -->
+    <div id="popup1" class="popup-container">Contenido Cigna</div>
+    <div id="popup2" class="popup-container">Contenido Obamacare</div>
+    <div id="popup3" class="popup-container">Contenido Medicare</div>
+
+    <!-- Scripts -->
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("open");
+      }
+
+      document.addEventListener("click", function (event) {
+        const menu = document.getElementById("menu");
+        const menuIcon = document.querySelector(".icon");
+
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+          menu.classList.remove("open");
+        }
+
+        // Cerrar popups si se hace clic fuera
+        const buttons = document.querySelectorAll(".button-group button");
+        const popups = document.querySelectorAll(".popup-container");
+        let isButtonClick = Array.from(buttons).some((btn) =>
+          btn.contains(event.target)
+        );
+        let isPopupClick = Array.from(popups).some((popup) =>
+          popup.contains(event.target)
+        );
+        if (!isButtonClick && !isPopupClick) {
+          popups.forEach((p) => p.classList.remove("active"));
+        }
+      });
+
+      function togglePopup(id) {
+        const popup = document.getElementById(id);
+        const isActive = popup.classList.contains("active");
+        document
+          .querySelectorAll(".popup-container")
+          .forEach((el) => el.classList.remove("active"));
+        if (!isActive) popup.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

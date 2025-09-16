@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f3f3;
+}
+
+header {
+  background: #fff;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(88, 84, 84, 0.36);
+  position: relative;
+  z-index: 2;
+}
+
+h2 {
+  color: rgba(18, 58, 91, 0.72);
+  text-align: center;
+}
+
+#menu-btn {
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 3;
+}
+
+#sidebar.active {
+  left: 0;
+}
+
+#sidebar a {
+  color: #333;
+  text-decoration: none;
+}
+
+#sidebar a:hover {
+  color: #007bff;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 2;
+}
+
+#overlay.active {
+  display: block;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  background: #fff;
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+section img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.logo-obama,
+.logo-cigna {
+  height: 80px;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s, background 0.3s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+footer {
+  background: rgba(18, 58, 91, 0.72);
+  color: #fff;
+  padding: 30px 20px;
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+footer div {
+  flex: 1 1 200px;
+}
+
+footer h3 {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .btn {
+    display: block;
+    margin-top: 10px;
+  }
+
+  footer .container {
+    flex-direction: column;
+  }
+}
